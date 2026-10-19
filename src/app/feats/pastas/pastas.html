@@ -1,57 +1,108 @@
 <div class="p-9 flex flex-col gap-5  ">
   <div class="[&>section]:h-20 [&>section]:w-20  [&>section]:items-center [&>section]:justify-center [&>section]:hover:rounded-[4px] [&>section]:hover:bg-[rgba(85,6,231,0.15)]  flex gap-4 [&>section]:flex [&>section]:flex-col [&>section]:items-center ">
-    <section >
-      <button><img src="calming_icons_32x32/calming_icons_32x32/phone.png" ></button>
+
+    <section>
+      <button (click)="abrirPasta.abrir('contato')"><img src="calming_icons_32x32/calming_icons_32x32/phone.png"></button>
       <h2>Contato</h2>
     </section>
+    @if (abrirPasta.janelasAbertas().includes('contato')) {
+    <div>
+      <app-contato></app-contato>
+    </div>
+    }
 
     <section>
-      <button><img src="icons/Icons - icones/mail-01.png"></button>
+      <button (click)="abrirPasta.abrir('mensagem')"><img src="icons/Icons - icones/mail-01.png"></button>
       <h2>Mensagem</h2>
     </section>
+    @if (abrirPasta.janelasAbertas().includes('mensagem')) {
+    <div>
+      <app-mensagem></app-mensagem>
+    </div>
+    }
 
     <section>
-      <button><img src="calming_icons_32x32/calming_icons_32x32/program.png"></button>
+      <button (click)="abrirPasta.abrir('projetos')"><img src="calming_icons_32x32/calming_icons_32x32/program.png"></button>
       <h2>Projetos</h2>
     </section>
+    @if (abrirPasta.janelasAbertas().includes('projetos')) {
+    <div>
+      <app-projetos></app-projetos>
+    </div>
+    }
 
     <section>
-      <button><img src="icons/Icons - icones/document-01.png"></button>
+      <button (click)="abrirPasta.abrir('curriculo')"><img src="icons/Icons - icones/document-01.png"></button>
       <h2>Currículo</h2>
     </section>
+     @if (abrirPasta.janelasAbertas().includes('curriculo')) {
+    <div>
+      <app-curriculo></app-curriculo>
+    </div>
+    }
 
     <section>
-      <button><img src="icons/Icons - icones/folder-05.png"></button>
+      <button (click)="abrirPasta.abrir('entra21')"><img src="icons/Icons - icones/folder-05.png"></button>
       <h2>Entra21</h2>
     </section>
+     @if (abrirPasta.janelasAbertas().includes('entra21')) {
+    <div>
+      <app-entra21></app-entra21>
+    </div>
+    }
 
     <section>
-      <button><img src="icons/Icons - icones/music-01.png"></button>
+      <button (click)="abrirPasta.abrir('Spotfy')"><img src="icons/Icons - icones/music-01.png"></button>
       <h2>Spotfy</h2>
     </section>
+    @if (abrirPasta.janelasAbertas().includes('Spotfy')) {
+    <div>
+      <app-spotfy></app-spotfy>
+    </div>
+    }
   </div>
 
 
   <div class="[&>section]:h-20 [&>section]:w-20  [&>section]:items-center [&>section]:justify-center [&>section]:hover:rounded-[4px] [&>section]:hover:bg-[rgba(85,6,231,0.15)] flex gap-4 [&>section]:flex [&>section]:flex-col [&>section]:items-center ">
     <section>
-      <button><img src="icons/Icons - icones/.ico .cur/folder-08.ico"></button>
+      <button (click)="abrirPasta.abrir('sonora')"><img src="icons/Icons - icones/.ico .cur/folder-08.ico"></button>
       <h2>Trilha Son...</h2>
     </section>
+    @if (abrirPasta.janelasAbertas().includes('sonora')) {
+    <div>
+      <app-trilha-sonora></app-trilha-sonora>
+    </div>
+    }
 
     <section>
-      <button><img src="calming_icons_32x32/calming_icons_32x32/stardew_valley.png"></button>
+      <button (click)="abrirPasta.abrir('games')"><img src="calming_icons_32x32/calming_icons_32x32/stardew_valley.png"></button>
       <h2>Games</h2>
     </section>
+    @if (abrirPasta.janelasAbertas().includes('games')) {
+    <div>
+      <app-game></app-game>
+    </div>
+    }
 
     <section>
-      <button><img src="iconeWin/calendario.png" width="32px"></button>
+      <button (click)="abrirPasta.abrir('calendario')"><img src="iconeWin/calendario.png" width="32px"></button>
       <h2>Calendário</h2>
     </section>
+    @if (abrirPasta.janelasAbertas().includes('calendario')) {
+    <div>
+      <app-calendario></app-calendario>
+    </div>
+    }
 
     <section>
-      <button><img src="calming_icons_32x32/calming_icons_32x32/this_computer.png"></button>
+      <button (click)="abrirPasta.abrir('sobreMim')"><img src="calming_icons_32x32/calming_icons_32x32/this_computer.png"></button>
       <h2>Sobre Mim</h2>
     </section>
+    @if (abrirPasta.janelasAbertas().includes('sobreMim')) {
+    <div>
+      <app-sobre-mim></app-sobre-mim>
+    </div>
+    }
 
     <section>
       <a href="https://www.linkedin.com/in/anabeatriz-dasilvaoliveira/" target="_blank" rel="noopener noreferrer"><img src="icons/Icons - icones/linkedin-02.png"></a>
