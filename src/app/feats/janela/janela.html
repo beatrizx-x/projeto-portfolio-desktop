@@ -1,0 +1,60 @@
+
+<div
+  class="fixed overflow-hidden border-2 border-purple-300 bg-purple-50 shadow-2xl"
+  [class.hidden]="minimizada()"
+  [class.z-10]="maximizada()"
+  [class.rounded-xl]="!maximizada()"
+  [class.rounded-none]="maximizada()"
+  [style.width]="maximizada() ? '100vw' : '40vw'"
+  [style.height]="maximizada() ? '100dvh' : '80dvh'"
+  [style.left]="maximizada() ? '0' : (posicao() ? posicao()!.x + 'px' : '50%')"
+  [style.top]="maximizada() ? '0' : (posicao() ? posicao()!.y + 'px' : '50%')"
+  [style.transform]="!maximizada() && !posicao() ? 'translate(-50%, -50%)' : 'none'"
+>
+  <div
+    (pointerdown)="iniciarArraste($event)"
+    class="flex select-none touch-none items-center justify-between border-b-2 border-purple-200 bg-purple-200 px-4 py-3"
+    [class.cursor-grab]="!segurando()"
+    [class.cursor-grabbing]="segurando()"
+  >
+    <span class="font-bold text-purple-950">
+      Minha janela
+    </span>
+
+    <div class="flex items-center gap-2">
+      <button
+        type="button"
+        (click)="minimizar()"
+        class="flex h-7 w-7 items-center justify-center rounded-md bg-blue-100 font-bold text-blue-950 hover:bg-blue-200"
+        aria-label="Minimizar janela"
+      >
+        −
+      </button>
+
+      <button
+        type="button"
+        (click)="alternarMaximizar()"
+        class="flex h-7 w-7 items-center justify-center rounded-md bg-pink-100 font-bold text-pink-950 hover:bg-pink-200"
+        aria-label="Maximizar ou restaurar janela"
+      >
+        {{ maximizada() ? '❐' : '□' }}
+      </button>
+
+      <button
+        type="button"
+        (click)="fechar()"
+        class="flex h-7 w-7 items-center justify-center rounded-md bg-red-200 font-bold text-red-950 hover:bg-red-300"
+        aria-label="Fechar janela"
+      >
+        ×
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="overflow-auto text-purple-950"
+    [style.height]="maximizada() ? 'calc(100% - 52px)' : 'calc(80dvh - 60px)'"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

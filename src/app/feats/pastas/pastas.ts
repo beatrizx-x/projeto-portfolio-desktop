@@ -11,9 +11,10 @@ import { Spotfy } from '../spotfy/spotfy';
 import { TrilhaSonora } from '../trilha-sonora/trilha-sonora';
 import { Game } from '../game/game';
 import { Calendario } from '../calendario/calendario';
+import { Janela } from '../janela/janela';
 
 @Component({
-  imports: [RouterLink, SobreMim, Contato, Mensagem, Projetos, Curriculo, Entra21, Spotfy, TrilhaSonora, Game, Calendario],
+  imports: [RouterLink, SobreMim, Contato, Mensagem, Projetos, Curriculo, Entra21, Spotfy, TrilhaSonora, Game, Calendario, Janela],
   selector: 'app-pastas',
   styleUrl: './pastas.css',
   templateUrl: './pastas.html',
