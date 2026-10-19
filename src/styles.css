@@ -3,7 +3,7 @@
 @import 'tailwindcss';
 @font-face {
   font-family: 'Tahoma';
-  src: url('/font/tahoma.ttf') format('truetype');
+  src: url('font/tahoma.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
  
