@@ -1,5 +1,5 @@
 <div class="p-9 flex flex-col gap-5  ">
-  <div class="[&>section]:h-20 [&>section]:w-20  [&>section]:items-center [&>section]:justify-center [&>section]:hover:rounded-[4px] [&>section]:hover:bg-[rgba(85,6,231,0.15)]  flex gap-4 [&>section]:flex [&>section]:flex-col [&>section]:items-center ">
+  <div class="[&>section]:h-20 [&>section]:w-20  [&>section]:items-center [&>section]:justify-center [&>section]:hover:rounded-[4px] [&>section]:hover:bg-[rgba(85,6,231,0.15)]  flex [&>section]:flex [&>section]:flex-col [&>section]:items-center ">
 
     <section>
       <button (click)="abrirPasta.abrir('contato')"><img src="calming_icons_32x32/calming_icons_32x32/phone.png"></button>
@@ -16,27 +16,27 @@
       <h2>Mensagem</h2>
     </section>
     @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'mensagem')) {
-  <app-janela id="mensagem">
-    <app-mensagem></app-mensagem>
-  </app-janela>
-}
+    <app-janela id="mensagem">
+      <app-mensagem></app-mensagem>
+    </app-janela>
+    }
 
     <section>
       <button (click)="abrirPasta.abrir('projetos')"><img src="calming_icons_32x32/calming_icons_32x32/program.png"></button>
       <h2>Projetos</h2>
     </section>
-    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'projetos'))  {
-      <app-janela id="projetos">
+    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'projetos')) {
+    <app-janela id="projetos">
       <app-projetos></app-projetos>
-   </app-janela>
+    </app-janela>
     }
 
     <section>
       <button (click)="abrirPasta.abrir('curriculo')"><img src="icons/Icons - icones/document-01.png"></button>
       <h2>Currículo</h2>
     </section>
-    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'curriculo'))  {
-      <app-janela id="curriculo">
+    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'curriculo')) {
+    <app-janela id="curriculo">
       <app-curriculo></app-curriculo>
     </app-janela>
     }
@@ -46,19 +46,19 @@
       <h2>Entra21</h2>
     </section>
     @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'entra21')) {
-      <app-janela id="entra21">
+    <app-janela id="entra21">
       <app-entra21></app-entra21>
-   </app-janela>
+    </app-janela>
     }
 
     <section>
       <button (click)="abrirPasta.abrir('spotfy')"><img src="icons/Icons - icones/music-01.png"></button>
       <h2>Spotfy</h2>
     </section>
-    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'spotfy'))  {
-     <app-janela id="spotfy">
+    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'spotfy')) {
+    <app-janela id="spotfy">
       <app-spotfy></app-spotfy>
-   </app-janela>
+    </app-janela>
     }
   </div>
 
@@ -68,8 +68,8 @@
       <button (click)="abrirPasta.abrir('sonora')"><img src="icons/Icons - icones/.ico .cur/folder-08.ico"></button>
       <h2>Trilha Son...</h2>
     </section>
-    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'sonora'))  {
-      <app-janela id="sonora">
+    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'sonora')) {
+    <app-janela id="sonora">
       <app-trilha-sonora></app-trilha-sonora>
     </app-janela>
     }
@@ -78,8 +78,8 @@
       <button (click)="abrirPasta.abrir('games')"><img src="calming_icons_32x32/calming_icons_32x32/stardew_valley.png"></button>
       <h2>Games</h2>
     </section>
-    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'games'))  {
-      <app-janela id="games">
+    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'games')) {
+    <app-janela id="games">
       <app-game></app-game>
     </app-janela>
     }
@@ -88,8 +88,8 @@
       <button (click)="abrirPasta.abrir('calendario')"><img src="iconeWin/calendario.png" width="32px"></button>
       <h2>Calendário</h2>
     </section>
-    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'calendario'))  {
-      <app-janela id="calendario">
+    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'calendario')) {
+    <app-janela id="calendario">
       <app-calendario></app-calendario>
     </app-janela>
     }
@@ -98,10 +98,10 @@
       <button (click)="abrirPasta.abrir('sobreMim')"><img src="calming_icons_32x32/calming_icons_32x32/this_computer.png"></button>
       <h2>Sobre Mim</h2>
     </section>
-    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'sobreMim'))  {
+    @if (abrirPasta.janelasAbertas().some(janela => janela.id === 'sobreMim')) {
     <app-janela id="sobreMim">
       <app-sobre-mim></app-sobre-mim>
-   </app-janela>
+    </app-janela>
     }
 
     <section>

@@ -1,11 +1,33 @@
-<nav class="flex gap-3 h-14 w-full items-center fixed bottom-0 left-0 justify-center border border-white/20
-            bg-white/10 backdrop-blur-sm shadow-xl p-2 
-            [&>a]:h-12 [&>a]:w-12 [&>a]:flex [&>a]:items-center [&>a]:justify-center [&>a]:hover:rounded-[4px] [&>a]:hover:bg-[rgba(85,6,231,0.15)] " >
-  <a routerLink="/"><img src="calming_icons_32x32/calming_icons_32x32/program.png"></a>
-  <a routerLink="/"><img src="icons/Icons - icones/mail-01.png"></a>
-  <a routerLink="/"><img src="calming_icons_32x32/calming_icons_32x32/this_computer.png"></a>
-  <a routerLink="/"><img src="icons/Icons - icones/music-01.png"></a>
-  <a routerLink="/"><img src="iconeWin/calendario.png" width="32px"></a>
-  <a routerLink="/"><img src="icons/Icons - icones/.ico .cur/folder-08.ico"></a>
-  <a routerLink="/"><img src="icons/Icons - icones/document-01.png"></a>
+<nav class="fixed bottom-0 left-0 z-50 flex h-14 w-full items-center justify-center gap-3 border border-white/20 bg-white/10 p-2 shadow-xl backdrop-blur-sm">
+  @for (app of [
+  { id: 'projetos', nome: 'Projetos', icone: 'calming_icons_32x32/calming_icons_32x32/program.png' },
+  { id: 'mensagem', nome: 'Mensagem', icone: 'icons/Icons - icones/mail-01.png' },
+  { id: 'sobreMim', nome: 'Sobre mim', icone: 'calming_icons_32x32/calming_icons_32x32/this_computer.png' },
+  { id: 'spotfy', nome: 'Spotify', icone: 'icons/Icons - icones/music-01.png' },
+  { id: 'calendario', nome: 'Calendário', icone: 'iconeWin/calendario.png' },
+  { id: 'sonora', nome: 'Trilha sonora', icone: 'icons/Icons - icones/.ico .cur/folder-08.ico' },
+  { id: 'curriculo', nome: 'Currículo', icone: 'icons/Icons - icones/document-01.png' }
+  ]; track app.id) {
+  <div class="group relative flex h-full items-center">
+    @if (abrirPasta.janelasAbertas().find(j => j.id === app.id); as janela) {
+    <div class="pointer-events-none absolute bottom-[calc(100%+10px)] left-1/2 hidden w-44 -translate-x-1/2 rounded-lg border border-purple-200 bg-[#E9D4FF] p-3 text-purple-950 shadow-xl group-hover:block">
+      <div class="mb-2 flex h-16 items-center justify-center rounded-md bg-[#FCE7F3]">
+        <img [src]="app.icone" [alt]="app.nome" class="max-h-10 max-w-10 object-contain" />
+      </div>
+      <p class="truncate text-center text-sm font-semibold">{{ app.nome }}</p>
+      <p class="mt-1 text-center text-xs text-purple-700">
+        {{ janela.minimizada ? 'Minimizada' : 'Aberta' }}
+      </p>
+    </div>
+    }
+
+    <button type="button" (click)="abrirPasta.abrir(app.id)" [attr.aria-label]="'Abrir ' + app.nome" [attr.title]="app.nome" class="relative flex h-11 w-11 items-center justify-center rounded-md transition-colors hover:bg-[rgba(85,6,231,0.27)]" [class.bg-purple-400/40]="abrirPasta.janelasAbertas().some(j => j.id === app.id && !j.minimizada)" [class.bg-pink-900/10]="abrirPasta.janelasAbertas().some(j => j.id === app.id && j.minimizada)">
+      <img [src]="app.icone" [alt]="app.nome" class="max-h-8 max-w-8 object-contain" />
+
+      @if (abrirPasta.janelasAbertas().some(j => j.id === app.id)) {
+      <span class="absolute bottom-0.5 h-0.5 w-9 rounded-full" [class.bg-pink-900/50]="!abrirPasta.janelasAbertas().some(j => j.id === app.id && j.minimizada)" [class.bg-blue-600/80]="abrirPasta.janelasAbertas().some(j => j.id === app.id && j.minimizada)"></span>
+      }
+    </button>
+  </div>
+  }
 </nav>
